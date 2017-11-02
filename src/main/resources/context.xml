@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="first" class="sum.Classes.Binary"/>
+    <bean id="second" class="sum.Classes.Binary"/>
+
+    <bean id="sumZM" class="sum.Classes.Result">
+        <constructor-arg index="0" ref="first"/>
+        <constructor-arg index="1" ref="second"/>
+    </bean>
+
+    <bean id="sumZU1" class="sum.Classes.ResultZU1">
+        <constructor-arg index="0" ref="first"/>
+        <constructor-arg index="1" ref="second"/>
+    </bean>
+
+    <bean id="sumZU2" class="sum.Classes.ResultZU2">
+        <constructor-arg index="0" ref="first"/>
+        <constructor-arg index="1" ref="second"/>
+    </bean>
+
+    <bean id="printZM" class="sum.Classes.PrinterImpl">
+        <constructor-arg ref="sumZM"/>
+        <constructor-arg value="ZM"/>
+    </bean>
+
+    <bean id="printZU1" class="sum.Classes.PrinterImpl">
+        <constructor-arg ref="sumZU1"/>
+        <constructor-arg value="ZU1"/>
+    </bean>
+
+    <bean id="printZU2" class="sum.Classes.PrinterImpl">
+    <constructor-arg ref="sumZU2"/>
+    <constructor-arg value="ZU2"/>
+    </bean>
+
+
+
+
+
+
+
+
+</beans>
